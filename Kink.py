@@ -60,50 +60,29 @@ class Library:
         elif k_7!=password:
             print('The Password entered by you does not match our database!')
 
-# if __name__=='main':
+if __name__=='__main__':
 
-K = Library()
+    K = Library()
 
-K.details('Lincon_hub', 'Near secter-7, East_California', '2541698745')
-K.b_Info('NCERT', 15)
-    
-while(True):
+    K.details('Lincon_hub', 'Near secter-7, East_California', '2541698745')
+    K.b_Info('NCERT', 15)
 
-    
-    f_2 = input('Enter your request\n')
-    if f_2=='Enter Library':
-        print('Welcome to our library! Please enter your details.')
-        print('We have all variety and releases of NCERT Books$')
-        print('If you are an old user enter "Yes", else type "No"')
-        f_3 = input("Are you an old user?\n")
-        if f_3=='No':
+    while(True):
 
-                L_6 = input('Enter your name: ')
-                L_7 = input('Enter your address\n')
-                L_8 = input('Enter your phone_Num\n')
-                K.u_Info(L_6, L_7, L_8)
 
-                while(True):
-                    p2 = input('How can we help you: ')
+        f_2 = input('Enter your request\n')
+        if f_2=='Enter Library':
+            print('Welcome to our library! Please enter your details.')
+            print('We have all variety and releases of NCERT Books$')
+            print('If you are an old user enter "Yes", else type "No"')
+            f_3 = input("Are you an old user?\n")
+            if f_3=='No':
 
-                    if p2=='Lib details':
-                                K.get_B_Details()
+                    L_6 = input('Enter your name: ')
+                    L_7 = input('Enter your address\n')
+                    L_8 = input('Enter your phone_Num\n')
+                    K.u_Info(L_6, L_7, L_8)
 
-                    elif p2=='Product_details':
-                                K.show_P_Details()
-
-                    elif p2=='Issue_Bk':
-                                J1 = input('Enter the Book_name: ')
-                                J2 = int(input('For how much time you want to Issue(in days)\n'))
-                                K.u_Bo(J1, J2)
-                    elif p2=='q':
-                        break
-
-        elif f_3=='Yes':
-            k_23 = input('Please enter your username: ')
-            with open('data_Base.txt')as n:
-                w_3 = n.read()
-                if k_23 in w_3:
                     while(True):
                         p2 = input('How can we help you: ')
 
@@ -119,15 +98,36 @@ while(True):
                                     K.u_Bo(J1, J2)
                         elif p2=='q':
                             break
-                    
-                elif k_23 not in w_3:
-                    print('Your not an old user! Please sign in.')
 
-    elif f_2=='get user details':
-        K.show_U_Details()
+            elif f_3=='Yes':
+                k_23 = input('Please enter your username: ')
+                with open('data_Base.txt')as n:
+                    w_3 = n.read()
+                    if k_23 in w_3:
+                        while(True):
+                            p2 = input('How can we help you: ')
 
-    elif f_2=='quit':
-        break
+                            if p2=='Lib details':
+                                        K.get_B_Details()
+
+                            elif p2=='Product_details':
+                                        K.show_P_Details()
+
+                            elif p2=='Issue_Bk':
+                                        J1 = input('Enter the Book_name: ')
+                                        J2 = int(input('For how much time you want to Issue(in days)\n'))
+                                        K.u_Bo(J1, J2)
+                            elif p2=='q':
+                                break
+
+                    elif k_23 not in w_3:
+                        print('Your not an old user! Please sign in.')
+
+        elif f_2=='get user details':
+            K.show_U_Details()
+
+        elif f_2=='quit':
+            break
 
 
 
